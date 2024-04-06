@@ -9,3 +9,9 @@ author, and this description to match your project!
 "use strict";
 
 // Code goes here
+
+setup(); 
+
+function setup() {
+    console.log(document); 
+}

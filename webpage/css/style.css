@@ -3,4 +3,47 @@
 Here is a description of any special CSS used.
 By default that's nothing.
 
+Font sizes specified in the rem unit, where 1rem is the default for the overall tag (3rem is 3 times larger than the default)
+Typefaces are specfied as text 
+Colors specfied as hexademucals 
+
 **********************************************/
+
+body {
+    font-family: sans-serif; 
+}
+
+h1 {
+    font-size: 3rem; 
+}
+
+h2 {
+    font-family: Helvetica, sans-serif; 
+    color: #ff8888; 
+}
+
+p {
+    color: #444444; 
+}
+
+/* Style both strong and em tags */
+strong, em {
+    color: #4488aa; 
+}
+
+#first-section {
+    background-color: rgb(200, 200, 200); 
+}
+
+.second-section-paragraph { 
+    background-color: rgb(200, 255, 255); 
+}
+
+.time {
+    font-family: monospace; 
+}
+
+a:hover { 
+    color: yellow; 
+}
+
