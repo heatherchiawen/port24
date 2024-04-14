@@ -40,6 +40,8 @@ function preload() {
     chester = loadImage(`assets/images/chester.png`); 
 
     // Loading savory recipes 
+    mapoTofu = loadImage(`assets/images/mapoTofu.png`); 
+    sanBeiJi = loadImage(`assets/images/SanBeiJi.png`); 
     jerky = loadImage(`assets/images/jerky.png`); 
     teaEgg = loadImage(`assets/images/teaEgg.png`); 
 
