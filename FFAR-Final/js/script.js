@@ -27,34 +27,21 @@
 let bananaOne, bananaTwo, jamOne, jamTwo, chester, jerky; 
 
 // Photos for initial display 
-// let cakePhoto, familyPhoto, shrinePhoto; 
-
-// let photoX = width/2; 
-// let photoSpacing = 200; 
-
-// let state = `title`; 
-// image(cakePhoto, width/2 - 450, height/2, 300, 200);
-let cakePhoto = {
-    x: 0,
-    y: 0, 
-    w: 300, 
-    h: 200, 
-    image: undefined 
-}
+let cakePhoto, familyPhoto, shrinePhoto; 
 
 function preload() {
     // Loading recipes 
-    // bananaOne = loadImage(`assets/images/banana1.png`); 
-    // bananaTwo = loadImage(`assets/images/banana2.png`); 
-    // jamOne = loadImage(`assets/images/jam1.png`);
-    // jamTwo = loadImage(`assets/images/jam2.png`);  
-    // chester = loadImage(`assets/images/chester.png`); 
-    // jerky = loadImage(`assets/images/jerky.png`); 
+    bananaOne = loadImage(`assets/images/banana1.png`); 
+    bananaTwo = loadImage(`assets/images/banana2.png`); 
+    jamOne = loadImage(`assets/images/jam1.png`);
+    jamTwo = loadImage(`assets/images/jam2.png`);  
+    chester = loadImage(`assets/images/chester.png`); 
+    jerky = loadImage(`assets/images/jerky.png`); 
 
     // Loading photos for initial display 
-    cakePhoto.image = loadImage(`assets/images/cake.png`); 
-    // familyPhoto = loadImage(`assets/images/family.png`); 
-    // shrinePhoto = loadImage(`assets/images/shrine.png`); 
+    cakePhoto = loadImage(`assets/images/cake.png`); 
+    familyPhoto = loadImage(`assets/images/family.png`); 
+    shrinePhoto = loadImage(`assets/images/shrine.png`); 
 }
 
 
@@ -62,11 +49,7 @@ function preload() {
  * Description of setup
 */
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    
-    cakePhoto.x = windowWidth/2; 
-    cakePhoto.y = windowHeight/2; 
-
+    createCanvas(windowWidth, windowHeight); 
 }
 
 
@@ -76,13 +59,8 @@ function setup() {
 function draw() {
     background(255); 
 
+    // simulation(); 
     title(); 
-    // if (state === `title`) {
-    //     title(); 
-    // }
-    // else if (state === `simulation`) {
-    //     simulation(); 
-    // }
 }
 
 function title() {
@@ -90,38 +68,72 @@ function title() {
     textSize(64); 
     fill(0); 
     textAlign(CENTER, CENTER); 
-    // text(`HI`, width/2, height/2);  
+    text(`吃饱了, Chī bǎole, I am full`, width/2, 100);  
+    // add descriptive subtext (MAYBE WITHIN THE SHRINE IMAGE???)
+    // ADD FONT 
     pop();
 
     photoDisplay(); 
+    // add check that would lead to sweet or savoury display 
+    
+    // dessertSection();
+    // savorySection(); 
 }
 
 function photoDisplay() {
+    // Cake photo 
+    if (mouseX > width/2 - 500 && mouseX < width/2 - 500 + 350 && mouseY > height/2 && mouseY < height/2 + 250) {
+        tint(214, 157, 0); 
+        image(cakePhoto, width/2 - 500, height/2, 350, 250);
+    }
+    else {
+        noTint(); 
+        image(cakePhoto, width/2 - 500, height/2, 350, 250);
+    }  
 
-    // if (mouseOver()) {
+    // Shrine photo display 
+    if (mouseX > width/2 - 100 && mouseX < width/2 - 100 + 250 && mouseY > height/2 - 50 && mouseY < height/2 - 50 + 350) {
+        tint(214, 157, 0);
+        image(shrinePhoto, width/2 - 100, height/2 - 50, 250, 350); 
+    }
+    else {
+        noTint(); 
+        image(shrinePhoto, width/2 - 100, height/2 - 50, 250, 350);
+    }  
 
-    // } else {
-        // image(cakePhoto, width/2 - 450, height/2, 300, 200); 
-        image(cakePhoto.image, cakePhoto.x, cakePhoto.y, cakePhoto.w, cakePhoto.y);    
-    // }
-
-    // image(shrinePhoto, width/2 - 100, height/2 - 50, 200, 300);  
-    // image(familyPhoto, width/2 + 150, height/2, 300, 200);
+    // Family photo display 
+    if (mouseX > width/2 + 200 && mouseX < width/2 + 200 + 350 && mouseY > height/2 && mouseY < height/2 + 250) {
+        tint(214, 157, 0);
+        image(familyPhoto, width/2 + 200, height/2, 350, 250);
+    }
+    else {
+        noTint();
+        image(familyPhoto, width/2 + 200, height/2, 350, 250);
+    }
 }
 
-function simulation() {
-    // recipeDisplay(); 
+function dessertSection() {
+    // Banana check 
+    if (mouseX > width/2 - 450 && mouseX < width/2 - 450 + 300 && mouseY > height/2 - 100 && mouseY < height/2 - 100 + 375) {
+        image(bananaTwo, width/2 - 450, height/2 - 100, 300, 375);
+    } else {
+        image(bananaOne, width/2 - 450, height/2 - 100, 300, 375); 
+    }
 
-    // image(bananaOne, x, y, w, h); 
-    // image(bananaTwo, x, y, w, h); 
-    // image(jamOne, x, y, w, h); 
-    // image(jamTwo, x, y, w, h); 
-    // image(chester, x, y, w, h);
-    // image(jerky, x, y, w, h);  
+    // chester cookies 
+    image(chester, width/2 - 150, height/2 - 100, 300, 375);
+
+    // Jam check 
+    if (mouseX > width/2 + 150 && mouseX < width/2 + 150 + 300 && mouseY > height/2 - 100 && mouseY < height/2 - 100 + 375) {
+        image(jamTwo, width/2 + 150, height/2 - 100, 300, 375); 
+    }
+    else {
+        image(jamOne, width/2 + 150, height/2 - 100, 300, 375); 
+    }
 }
 
+function savorySection() {
+    image(jerky, width/2 - 200, height/2 - 100, 400, 200);  
+}
 // function mousePressed() {
-//     if (state === `title`) {
-//         state = `simulation`; 
-//     }
 // }
