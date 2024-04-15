@@ -1,9 +1,8 @@
 /**
- * FFAR - Final, TBA 
+ * FFAR - Final, 吃饱了, chī bǎole
  * Heather Chester 
  * 
- * Summary 
- * ADD descriptions for the reicipes?? 
+ * Archive of family recipes for FFAR 250 final project at Concordia Univeristy. 
  * 
  */
 
@@ -82,7 +81,7 @@ function photoDisplay() {
     textSize(32); 
     textAlign(CENTER, CENTER); 
     textStyle(BOLDITALIC); 
-    text(`吃饱了, chī bǎole, i am full: an archive for family recipes`, width/2, 100);  
+    text(`吃饱了, chī bǎole, i am full: an archive of family recipes`, width/2, 100);  
 
     // Subtext display 
     textSize(14); 
@@ -107,7 +106,7 @@ function photoDisplay() {
         image(shrinePhoto, width/2 - 187.5, height/2 - 150, 375, 520);
         fill(255);
         textSize(18); 
-        text(`ADD`, width/2 - 178, height/2);  
+        text(`This digital archive is dedicated\n\nto my family.\n\n\nThank you for feeding me\n\nand teaching me the joy of eating.`, width/2 - 182, height/2 + 45);  
     }
     else {
         noTint(); 
@@ -187,7 +186,7 @@ function savorySection() {
     textSize(64); 
     text(`savoury`, 20, 125);  
     textSize(14);
-    text(`hover image to expand view\n\n\non this page:\n\n\nsan bei ji\n\nmapo Tofu\n\njerky\n\ntea eggs`, 40, 160); 
+    text(`hover image to expand view\n\n\non this page left to right:\n\n\nsan bei ji\n\nmapo Tofu\n\njerky\n\ntea eggs`, 40, 160); 
 
     // Homing button 
     strokeJoin(ROUND); 
