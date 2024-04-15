@@ -78,21 +78,23 @@ function draw() {
 function photoDisplay() {
     // Title text display 
     push();
+    fill(0); 
     textSize(32); 
     textAlign(CENTER, CENTER); 
     textStyle(BOLDITALIC); 
-    text(`吃饱了, chī bǎole, i am full: an archive for family recipes`, width/2, 75);  
+    text(`吃饱了, chī bǎole, i am full: an archive for family recipes`, width/2, 100);  
 
     // Subtext display 
-    textSize(14) 
-    text(`click images on the side for recipes`, width/2, 110);  
-    // add descriptive subtext (MAYBE WITHIN THE SHRINE IMAGE???)
+    textSize(14); 
+    text(`click side images side for recipes and middle for dedications\n-Heather Chester`, width/2, 150);  
     pop();
 
     // Cake photo 
-    if (mouseX > width/2 - 500 && mouseX < width/2 - 150 && mouseY > height/2 && mouseY < height/2 + 250) {
-        tint(227, 195, 207);
+    if (mouseX > width/2 - 600 && mouseX < width/2 - 150 && mouseY > height/2 && mouseY < height/2 + 250)  {
+        push(); 
+        tint(166, 134, 146);
         image(cakePhoto, width/2 - 600, height/2, 350, 250);
+        pop(); 
     }
     else {
         noTint(); 
@@ -101,8 +103,11 @@ function photoDisplay() {
 
     // Shrine photo display 
     if (mouseX > width/2 - 187.5 && mouseX < width/2 + 187.5 && mouseY > height/2 - 150 && mouseY < height/2 + 370) {
-        tint(237, 213, 147);
-        image(shrinePhoto, width/2 - 187.5, height/2 - 150, 375, 520); 
+        tint(122, 94, 21);
+        image(shrinePhoto, width/2 - 187.5, height/2 - 150, 375, 520);
+        fill(255);
+        textSize(18); 
+        text(`ADD`, width/2 - 178, height/2);  
     }
     else {
         noTint(); 
@@ -111,7 +116,7 @@ function photoDisplay() {
 
     // Family photo display 
     if (mouseX > width/2 + 250 && mouseX < width/2 + 600 && mouseY > height/2 && mouseY < height/2 + 250) {
-        tint(195, 201, 230); 
+        tint(132, 138, 163); 
         image(familyPhoto, width/2 + 250, height/2, 350, 250);
     }
     else {
@@ -123,13 +128,13 @@ function photoDisplay() {
 function dessertSection() {
     // Title text display 
     push();
+    fill(0); 
     textSize(64); 
     text(`sweet`, 20, 125); 
 
     // Subtext display  
     textSize(14);
-    text(`hover image to expand view\nclick to see back\n\n\non this page top to bottom:\n\n\nbanana bread\n\nchester cookies\n\njam drop cookies`, 40, 160); 
-    pop();
+    text(`hover image to expand view\nclick to see back\n\n\non this page top to bottom:\n\n\nbanana bread\n\nchester cookies\n\njam drop cookies`, 40, 160);
 
     // Homing button 
     strokeJoin(ROUND); 
@@ -139,6 +144,7 @@ function dessertSection() {
     line(37.5, 35, 45, 40); // right slant
     line(45, 40, 45, 50); // right side
     text(`home`, 55, 50);  
+    pop();
 
     // Dessert image display 
     noTint(); 
@@ -177,11 +183,11 @@ function dessertSection() {
 function savorySection() {
     // Text display 
     push();
+    fill(0); 
     textSize(64); 
-    text(`savory`, 20, 125);  
+    text(`savoury`, 20, 125);  
     textSize(14);
     text(`hover image to expand view\n\n\non this page:\n\n\nsan bei ji\n\nmapo Tofu\n\njerky\n\ntea eggs`, 40, 160); 
-    pop();
 
     // Homing button 
     strokeJoin(ROUND); 
@@ -191,6 +197,7 @@ function savorySection() {
     line(37.5, 35, 45, 40); // right slant
     line(45, 40, 45, 50); // right side 
     text(`home`, 55, 50); 
+    pop();
 
     // Savory image display 
     noTint(); 
@@ -232,7 +239,7 @@ function savorySection() {
 function mousePressed() {
     // Check for if images in displayPhotos if pressed 
     // cakePhoto
-    if (state === `photoDisplay` && mouseX > width/2 - 500 && mouseX < width/2 - 150 && mouseY > height/2 && mouseY < height/2 + 250) {
+    if (mouseX > width/2 - 600 && mouseX < width/2 - 150 && mouseY > height/2 && mouseY < height/2 + 250)  {
         state = `dessertSection`; 
     } 
     // familyPhoto 
