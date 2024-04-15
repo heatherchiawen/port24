@@ -198,8 +198,8 @@ function savorySection() {
     noTint(); 
     image(jerky, width/2 - 200, height/2 + 125, 400, 200);  
     image(teaEgg, width/2 + 250, height/2 + 125, 300, 200);
-    image(mapoTofu, width/2 - 300, height/2 + 125, 100, 100); 
-    image(sanBeiJI, width/2 - 100, height/2 + 125, 100, 100); 
+    image(mapoTofu, width/2 - 400, height/2 + 125, 200, 200); 
+    image(sanBeiJI, width/2 - 600, height/2 + 125, 200, 200); 
 
     // Jerky check 
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 + 100 && mouseY < height/2 + 300)  {
