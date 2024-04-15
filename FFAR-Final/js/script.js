@@ -16,7 +16,7 @@
 let bananaOne, bananaTwo, jamOne, jamTwo, chester; 
 
 // Savory recipes 
-let jerky, teaEgg, mapoTofu //, sanBeiJi; 
+let jerky, teaEgg, mapoTofu, sanBeiJi; 
 
 // Photos for initial display 
 let cakePhoto, familyPhoto, shrinePhoto; 
@@ -33,7 +33,7 @@ function preload() {
 
     // Loading savory recipes 
     mapoTofu = loadImage(`assets/images/mapoTofu.png`); 
-    // sanBeiJi = loadImage(`assets/images/SanBeiJi.png`); 
+    sanBeiJi = loadImage(`assets/images/SanBeiJi.png`); 
     jerky = loadImage(`assets/images/jerky.png`); 
     teaEgg = loadImage(`assets/images/teaEgg.png`); 
 
@@ -203,7 +203,7 @@ function savorySection() {
     image(jerky, width/2 - 50, height/2 + 125, 400, 200);  
     image(teaEgg, width/2 + 375, height/2 + 125, 300, 200);
     image(mapoTofu, width/2 - 400, height/2 + 125, 300, 200); 
-    // image(sanBeiJi, width/2 - 700, height/2 + 125, 300, 200); 
+    image(sanBeiJi, width/2 - 700, height/2 + 125, 300, 200); 
 
     // Jerky check 
     if (mouseX > width/2 - 50 && mouseX < width/2 + 350 && mouseY > height/2 + 125 && mouseY < height/2 + 325)  {
@@ -227,12 +227,12 @@ function savorySection() {
         image(mapoTofu, width/2 - 400, height/2 + 125, 300, 200); 
     }
     // SanBeiJi check 
-    // if (mouseX > width/2 - 700 && mouseX < width/2 - 400 && mouseY > height/2 + 125 && mouseY < height/2 + 325) {
-    //     image(sanBeiJi, width/2 - 300, 50, 600, 400); 
+    if (mouseX > width/2 - 700 && mouseX < width/2 - 400 && mouseY > height/2 + 125 && mouseY < height/2 + 325) {
+        image(sanBeiJi, width/2 - 300, 50, 600, 400); 
 
-    //     tint(213, 216, 230);
-    //     image(sanBeiJi, width/2 - 700, height/2 + 125, 300, 200); 
-    // }
+        tint(213, 216, 230);
+        image(sanBeiJi, width/2 - 700, height/2 + 125, 300, 200); 
+    }
 }
 
 function mousePressed() {
