@@ -33,7 +33,7 @@ function preload() {
 
     // Loading savory recipes 
     mapoTofu = loadImage(`assets/images/mapoTofu.png`); 
-    sanBeiJi = loadImage(`assets/images/SanBeiJi.png`); 
+    sanBeiJi = loadImage(`assets/images/sanBeiJi.png`); 
     jerky = loadImage(`assets/images/jerky.png`); 
     teaEgg = loadImage(`assets/images/teaEgg.png`); 
 
