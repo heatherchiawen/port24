@@ -3,14 +3,7 @@
  * Heather Chester 
  * 
  * Summary 
- * (and maybe descriptions for the reicipes appear?)
- * when the user clicks the image, a new state appears (recipes) and the images of recipes appear, with titles 
- * 
- * For paper: 
- * Mention the limitations of the libraries I'm using 
- * As an artist, updating the pogram and altering the code is part of my intent of continuing to work 
- * As coding is an ever evolivng art form, and I am barely a complete newbie.... 
- * I was learning how to code with p5js around gaming but this project was attempt in translating that towrds a web application 
+ * ADD descriptions for the reicipes?? 
  * 
  */
 
@@ -61,7 +54,7 @@ function setup() {
     // Non-image settings 
     fill(0); 
     textFont(`Courier New`); 
-    strokeWeight(3); 
+    strokeWeight(2); 
 }
 
 
@@ -83,11 +76,14 @@ function draw() {
 }
 
 function photoDisplay() {
-    // Text display 
+    // Title text display 
     push();
     textSize(32); 
     textAlign(CENTER, CENTER); 
-    text(`吃饱了, Chī bǎole, I am full: an archive for family recipes`, width/2, 75);  
+    textStyle(BOLDITALIC); 
+    text(`吃饱了, chī bǎole, i am full: an archive for family recipes`, width/2, 75);  
+
+    // Subtext display 
     textSize(14) 
     text(`click images on the side for recipes`, width/2, 110);  
     // add descriptive subtext (MAYBE WITHIN THE SHRINE IMAGE???)
@@ -125,12 +121,14 @@ function photoDisplay() {
 }
 
 function dessertSection() {
-    // Text display 
+    // Title text display 
     push();
     textSize(64); 
-    text(`sweet`, 20, 125);  
+    text(`sweet`, 20, 125); 
+
+    // Subtext display  
     textSize(14);
-    text(`hover image to expand view\nclick to see back\n\n\non this page top to bottom:\n\n\nbanana bread\n\nchester cookies\n\njam drop cookies`, 40, 150); 
+    text(`hover image to expand view\nclick to see back\n\n\non this page top to bottom:\n\n\nbanana bread\n\nchester cookies\n\njam drop cookies`, 40, 160); 
     pop();
 
     // Homing button 
@@ -182,7 +180,7 @@ function savorySection() {
     textSize(64); 
     text(`savory`, 20, 125);  
     textSize(14);
-    text(`hover image to expand view\n\n\non this page:\n\n\njerky\n\ntea eggs`, 40, 160); 
+    text(`hover image to expand view\n\n\non this page:\n\n\nsan bei ji\n\nmapo Tofu\n\njerky\n\ntea eggs`, 40, 160); 
     pop();
 
     // Homing button 
@@ -196,28 +194,39 @@ function savorySection() {
 
     // Savory image display 
     noTint(); 
-    image(jerky, width/2 - 200, height/2 + 125, 400, 200);  
-    image(teaEgg, width/2 + 250, height/2 + 125, 300, 200);
-    image(mapoTofu, width/2 - 400, height/2 + 125, 200, 200); 
-    image(sanBeiJI, width/2 - 600, height/2 + 125, 200, 200); 
+    image(jerky, width/2 - 50, height/2 + 125, 400, 200);  
+    image(teaEgg, width/2 + 375, height/2 + 125, 300, 200);
+    image(mapoTofu, width/2 - 400, height/2 + 125, 300, 200); 
+    image(sanBeiJi, width/2 - 700, height/2 + 125, 300, 200); 
 
     // Jerky check 
-    if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 + 100 && mouseY < height/2 + 300)  {
-        image(jerky, width/2 - 400, height/2 - 300, 800, 400);  
+    if (mouseX > width/2 - 50 && mouseX < width/2 + 350 && mouseY > height/2 + 125 && mouseY < height/2 + 325)  {
+        image(jerky, width/2 - 400, 50, 800, 400);  
 
         tint(213, 216, 230);
-        image(jerky, width/2 - 200, height/2 + 125, 400, 200);  
+        image(jerky, width/2 - 50, height/2 + 125, 400, 200);  
     } 
     // teaEgg check 
-    if (mouseX > width/2 + 250 && mouseX < width/2 + 550 && mouseY > height/2 + 125 && mouseY < height/2 + 325) {
-        image(teaEgg, width/2 - 300, height/2 - 300, 600, 400);
+    if (mouseX > width/2 + 375 && mouseX < width/2 + 675 && mouseY > height/2 + 125 && mouseY < height/2 + 325) {
+        image(teaEgg, width/2 - 300, 50, 600, 400);
 
         tint(213, 216, 230); 
-        image(teaEgg, width/2 + 250, height/2 + 125, 300, 200);
+        image(teaEgg, width/2 + 375, height/2 + 125, 300, 200);
     }
     // mapoTofu check 
+    if (mouseX > width/2 - 400 && mouseX < width/2 - 400 + 300 && mouseY > height/2 + 125 && mouseY < height/2 + 325) {
+        image(mapoTofu, width/2 - 300, 50, 600, 400);
 
+        tint(213, 216, 230); 
+        image(mapoTofu, width/2 - 400, height/2 + 125, 300, 200); 
+    }
     // SanBeiJi check 
+    if (mouseX > width/2 - 700 && mouseX < width/2 - 400 && mouseY > height/2 + 125 && mouseY < height/2 + 325) {
+        image(sanBeiJi, width/2 - 300, 50, 600, 400); 
+
+        tint(213, 216, 230);
+        image(sanBeiJi, width/2 - 700, height/2 + 125, 300, 200); 
+    }
 }
 
 function mousePressed() {
