@@ -24,7 +24,7 @@
 let bananaOne, bananaTwo, jamOne, jamTwo, chester; 
 
 // Savory recipes 
-let jerky, teaEgg; 
+let jerky, teaEgg, mapoTofu, sanBeiJi; 
 
 // Photos for initial display 
 let cakePhoto, familyPhoto, shrinePhoto; 
@@ -198,6 +198,8 @@ function savorySection() {
     noTint(); 
     image(jerky, width/2 - 200, height/2 + 125, 400, 200);  
     image(teaEgg, width/2 + 250, height/2 + 125, 300, 200);
+    image(mapoTofu, width/2 - 300, height/2 + 125, 100, 100); 
+    image(sanBeiJI, width/2 - 100, height/2 + 125, 100, 100); 
 
     // Jerky check 
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 + 100 && mouseY < height/2 + 300)  {
@@ -213,6 +215,9 @@ function savorySection() {
         tint(213, 216, 230); 
         image(teaEgg, width/2 + 250, height/2 + 125, 300, 200);
     }
+    // mapoTofu check 
+
+    // SanBeiJi check 
 }
 
 function mousePressed() {
